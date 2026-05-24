@@ -1,5 +1,23 @@
 import Link from "next/link";
 
+const grades = [
+  {
+    title: "Fasallada 1-4",
+    text: "Su'aalo aasaasi ah oo ku habboon bilowga waxbarashada.",
+    href: "/quiz/fasalada-1-4",
+  },
+  {
+    title: "Fasallada 5-8",
+    text: "Layliyo dhexe oo xoojinaya fahamka xisaabta.",
+    href: "/quiz/fasalada-5-8",
+  },
+  {
+    title: "Fasallada 9-12",
+    text: "Imtixaanno heer sare ah oo loogu talagalay ardayda horumarsan.",
+    href: "/quiz/fasalada-9-12",
+  },
+];
+
 <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
   {grades.map((grade) => (
     <Link
