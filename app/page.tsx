@@ -18,27 +18,6 @@ const grades = [
   },
 ];
 
-<div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-  {grades.map((grade) => (
-    <Link
-      key={grade.href}
-      href={grade.href}
-      className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-    >
-      <h3 className="text-2xl font-bold text-[#071f3f]">
-        {grade.title}
-      </h3>
-
-      <p className="mt-3 text-sm leading-6 text-slate-600">
-        {grade.text}
-      </p>
-
-      <p className="mt-6 font-semibold text-blue-700">
-        Bilow imtixaanka →
-      </p>
-    </Link>
-  ))}
-</div>
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
@@ -52,7 +31,10 @@ export default function Home() {
             <Link href="/quiz" className="font-bold">
               Imtixaan Quiz
             </Link>
-            <Link href="/ku-saabsan">Ku saabsan</Link>
+
+            <Link href="/ku-saabsan">
+              Ku saabsan
+            </Link>
           </div>
         </nav>
       </header>
@@ -76,7 +58,10 @@ export default function Home() {
 
       <section id="practice" className="bg-white px-6 py-20">
         <div className="mx-auto max-w-6xl text-center">
-          <h2 className="text-4xl font-bold text-[#071f3f]">Imtixaan Quiz</h2>
+          <h2 className="text-4xl font-bold text-[#071f3f]">
+            Imtixaan Quiz
+          </h2>
+
           <p className="mt-3 text-lg text-slate-600">
             Dooro fasalkaaga si aad u bilowdo imtixaanka.
           </p>
@@ -91,9 +76,11 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-[#071f3f]">
                   {grade.title}
                 </h3>
+
                 <p className="mt-3 text-sm leading-6 text-slate-600">
                   {grade.text}
                 </p>
+
                 <p className="mt-6 font-semibold text-blue-700">
                   Bilow imtixaanka →
                 </p>
