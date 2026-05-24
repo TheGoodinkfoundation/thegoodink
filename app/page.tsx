@@ -10,7 +10,7 @@ export default function Home() {
           </Link>
 
           <div className="flex gap-8 text-sm">
-            <a href="#practice" className="font-bold">
+            <Link href="/quiz">Imtixaan Quiz</Link>
               Imtixaan Quiz
             </a>
             <Link href="/ku-saabsan">Ku saabsan</Link>
