@@ -35,33 +35,56 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="practice" className="px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold">Imtixaan Quiz</h2>
-          <p className="mt-3 max-w-2xl text-slate-600">
-            Dooro fasalkaaga si aad u bilowdo imtixaanka.
+<section id="practice" className="bg-white px-6 py-20">
+  <div className="mx-auto max-w-6xl text-center">
+    <h2 className="text-4xl font-bold text-[#071f3f]">Imtixaan Quiz</h2>
+
+    <p className="mt-3 text-lg text-slate-600">
+      Dooro fasalkaaga si aad u bilowdo imtixaanka.
+    </p>
+
+    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        {
+          title: "Fasalada 1-4",
+          text: "Su’aalo aasaasi ah oo ku habboon bilowga waxbarashada.",
+          icon: "📘",
+        },
+        {
+          title: "Fasalada 5-8",
+          text: "Layliyo dhexe oo xoojinaya fahamka xisaabta.",
+          icon: "✏️",
+        },
+        {
+          title: "Fasalada 9-12",
+          text: "Imtixaanno heer sare ah oo loogu talagalay ardayda horumarsan.",
+          icon: "🎓",
+        },
+      ].map((grade) => (
+        <div
+          key={grade.title}
+          className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+        >
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-3xl">
+            {grade.icon}
+          </div>
+
+          <h3 className="mt-6 text-2xl font-bold text-[#071f3f]">
+            {grade.title}
+          </h3>
+
+          <p className="mt-3 text-sm leading-6 text-slate-600">
+            {grade.text}
           </p>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              "Fasalka 1aad",
-              "Fasalka 2aad",
-              "Fasalka 3aad",
-              "Fasalka 4aad+",
-            ].map((grade) => (
-              <div
-                key={grade}
-                className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
-              >
-                <h3 className="text-xl font-semibold">{grade}</h3>
-                <p className="mt-2 text-sm text-slate-600">
-                  Dhawaan ayuu imaanayaa.
-                </p>
-              </div>
-            ))}
-          </div>
+          <button className="mt-6 rounded-full bg-[#071f3f] px-6 py-3 text-sm font-semibold text-white">
+            Bilow imtixaanka
+          </button>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
     </main>
   );
 }
