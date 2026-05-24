@@ -1,59 +1,58 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-950">
-      <section className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 text-center">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-blue-700">
-          The Good Ink Foundation
-        </p>
+    <main className="min-h-screen bg-white text-slate-950">
+      <header className="bg-[#071f3f] px-6 py-5 text-white">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between">
+          <Link href="/" className="text-lg font-semibold">
+            The Good Ink Foundation
+          </Link>
 
-        <h1 className="max-w-4xl text-5xl font-bold tracking-tight sm:text-7xl">
-          Mathematics education in Somali, made accessible.
-        </h1>
+          <div className="flex gap-6 text-sm">
+            <a href="#practice">Practice Quiz</a>
+            <Link href="/ku-saabsan">Ku saabsan</Link>
+          </div>
+        </nav>
+      </header>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-          Free lessons, quizzes and learning resources for students who want to
-          understand mathematics in a language that feels closer to them.
-        </p>
+      <section
+        className="relative flex min-h-[70vh] items-center justify-center bg-cover bg-center px-6 text-center"
+        style={{ backgroundImage: "url('/students.png')" }}
+      >
+        <div className="absolute inset-0 bg-[#071f3f]/65" />
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#"
-            className="rounded-full bg-blue-700 px-8 py-3 text-sm font-semibold text-white hover:bg-blue-800"
-          >
-            YouTube coming soon
-          </a>
+        <div className="relative z-10 max-w-4xl">
+          <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl">
+            The Good Ink Foundation
+          </h1>
 
-          <a
-            href="#quiz"
-            className="rounded-full border border-slate-300 bg-white px-8 py-3 text-sm font-semibold hover:bg-slate-100"
-          >
-            View quiz plan
-          </a>
+          <p className="mt-6 text-xl text-slate-100">
+            Learn mathematics. Practice with quizzes. Build confidence.
+          </p>
         </div>
       </section>
 
-      <section id="quiz" className="border-t border-slate-200 bg-white px-6 py-20">
-        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-3">
-          <div className="rounded-3xl border border-slate-200 p-8">
-            <h2 className="text-xl font-bold">Video lessons</h2>
-            <p className="mt-3 text-slate-600">
-              Clear explanations of core mathematics topics in Somali.
-            </p>
-          </div>
+      <section id="practice" className="px-6 py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold">Practice Quiz</h2>
+          <p className="mt-3 max-w-2xl text-slate-600">
+            Quizzes will be organised by grade level, so students can practise at
+            the right level.
+          </p>
 
-          <div className="rounded-3xl border border-slate-200 p-8">
-            <h2 className="text-xl font-bold">Practice quizzes</h2>
-            <p className="mt-3 text-slate-600">
-              Simple exercises that help students check their understanding.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200 p-8">
-            <h2 className="text-xl font-bold">Long-term mission</h2>
-            <p className="mt-3 text-slate-600">
-              Building accessible educational resources that can grow into a
-              larger learning platform.
-            </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {["Grade 1-3", "Grade 4-6", "Grade 7-9", "Grade 10+"].map((grade) => (
+              <div
+                key={grade}
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
+              >
+                <h3 className="text-xl font-semibold">{grade}</h3>
+                <p className="mt-2 text-sm text-slate-600">
+                  Coming soon.
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
