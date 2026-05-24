@@ -1,5 +1,26 @@
 import Link from "next/link";
 
+const grades = [
+  {
+    title: "Fasallada 1-4",
+    text: "Su’aalo aasaasi ah oo ku habboon bilowga waxbarashada.",
+    icon: "📘",
+    href: "/quiz/fasalada-1-4",
+  },
+  {
+    title: "Fasallada 5-8",
+    text: "Layliyo dhexe oo xoojinaya fahamka xisaabta.",
+    icon: "✏️",
+    href: "/quiz/fasalada-5-8",
+  },
+  {
+    title: "Fasallada 9-12",
+    text: "Imtixaanno heer sare ah oo loogu talagalay ardayda horumarsan.",
+    icon: "🎓",
+    href: "/quiz/fasalada-9-12",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
@@ -10,9 +31,13 @@ export default function Home() {
           </Link>
 
           <div className="flex gap-8 text-sm">
-            <Link href="/quiz">Imtixaan Quiz</Link>
+            <Link href="/quiz" className="font-bold">
               Imtixaan Quiz
-            <Link href="/ku-saabsan">Ku saabsan</Link>
+            </Link>
+
+            <Link href="/ku-saabsan">
+              Ku saabsan
+            </Link>
           </div>
         </nav>
       </header>
@@ -34,56 +59,45 @@ export default function Home() {
         </div>
       </section>
 
-<section id="practice" className="bg-white px-6 py-20">
-  <div className="mx-auto max-w-6xl text-center">
-    <h2 className="text-4xl font-bold text-[#071f3f]">Imtixaan Quiz</h2>
+      <section id="practice" className="bg-white px-6 py-20">
+        <div className="mx-auto max-w-6xl text-center">
+          <h2 className="text-4xl font-bold text-[#071f3f]">
+            Imtixaan Quiz
+          </h2>
 
-    <p className="mt-3 text-lg text-slate-600">
-      Dooro fasalkaaga si aad u bilowdo imtixaanka.
-    </p>
-
-    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {[
-        {
-          title: "Fasallada 1-4",
-          text: "Su’aalo aasaasi ah oo ku habboon bilowga waxbarashada.",
-          icon: "📘",
-        },
-        {
-          title: "Fasallada 5-8",
-          text: "Layliyo dhexe oo xoojinaya fahamka xisaabta.",
-          icon: "✏️",
-        },
-        {
-          title: "Fasallada 9-12",
-          text: "Imtixaanno heer sare ah oo loogu talagalay ardayda horumarsan.",
-          icon: "🎓",
-        },
-      ].map((grade) => (
-        <div
-          key={grade.title}
-          className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-        >
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-3xl">
-            {grade.icon}
-          </div>
-
-          <h3 className="mt-6 text-2xl font-bold text-[#071f3f]">
-            {grade.title}
-          </h3>
-
-          <p className="mt-3 text-sm leading-6 text-slate-600">
-            {grade.text}
+          <p className="mt-3 text-lg text-slate-600">
+            Dooro fasalkaaga si aad u bilowdo imtixaanka.
           </p>
 
-          <button className="mt-6 rounded-full bg-[#071f3f] px-6 py-3 text-sm font-semibold text-white">
-            Bilow imtixaanka
-          </button>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {grades.map((grade) => (
+              <div
+                key={grade.title}
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-3xl">
+                  {grade.icon}
+                </div>
+
+                <h3 className="mt-6 text-2xl font-bold text-[#071f3f]">
+                  {grade.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {grade.text}
+                </p>
+
+                <Link
+                  href={grade.href}
+                  className="mt-6 inline-block rounded-full bg-[#071f3f] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b2d5a]"
+                >
+                  Bilow imtixaanka
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
     </main>
   );
 }
