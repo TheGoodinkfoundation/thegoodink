@@ -1,23 +1,26 @@
 import Link from "next/link";
 
-const grades = [
-  {
-    title: "Fasallada 1-4",
-    text: "Su'aalo aasaasi ah oo ku habboon bilowga waxbarashada.",
-    href: "/quiz/fasalada-1-4",
-  },
-  {
-    title: "Fasallada 5-8",
-    text: "Layliyo dhexe oo xoojinaya fahamka xisaabta.",
-    href: "/quiz/fasalada-5-8",
-  },
-  {
-    title: "Fasallada 9-12",
-    text: "Imtixaanno heer sare ah oo loogu talagalay ardayda horumarsan.",
-    href: "/quiz/fasalada-9-12",
-  },
-];
+<div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  {grades.map((grade) => (
+    <Link
+      key={grade.href}
+      href={grade.href}
+      className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+    >
+      <h3 className="text-2xl font-bold text-[#071f3f]">
+        {grade.title}
+      </h3>
 
+      <p className="mt-3 text-sm leading-6 text-slate-600">
+        {grade.text}
+      </p>
+
+      <p className="mt-6 font-semibold text-blue-700">
+        Bilow imtixaanka →
+      </p>
+    </Link>
+  ))}
+</div>
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
