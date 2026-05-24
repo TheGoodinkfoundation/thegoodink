@@ -46,17 +46,17 @@ export default function Home() {
     <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {[
         {
-          title: "Fasalada 1-4",
+          title: "Fasallada 1-4",
           text: "Su’aalo aasaasi ah oo ku habboon bilowga waxbarashada.",
           icon: "📘",
         },
         {
-          title: "Fasalada 5-8",
+          title: "Fasallada 5-8",
           text: "Layliyo dhexe oo xoojinaya fahamka xisaabta.",
           icon: "✏️",
         },
         {
-          title: "Fasalada 9-12",
+          title: "Fasallada 9-12",
           text: "Imtixaanno heer sare ah oo loogu talagalay ardayda horumarsan.",
           icon: "🎓",
         },
