@@ -3,20 +3,20 @@ import Link from "next/link";
 const grades = [
   {
     title: "Fasallada 1-4",
-    text: "Su’aalo aasaasi ah oo ku habboon bilowga waxbarashada.",
-    icon: "📘",
+    text: "Suaalo aasaasi ah oo ku habboon bilowga waxbarashada.",
+    icon: "1",
     href: "/quiz/fasalada-1-4",
   },
   {
     title: "Fasallada 5-8",
     text: "Layliyo dhexe oo xoojinaya fahamka xisaabta.",
-    icon: "✏️",
+    icon: "2",
     href: "/quiz/fasalada-5-8",
   },
   {
     title: "Fasallada 9-12",
     text: "Imtixaanno heer sare ah oo loogu talagalay ardayda horumarsan.",
-    icon: "🎓",
+    icon: "3",
     href: "/quiz/fasalada-9-12",
   },
 ];
